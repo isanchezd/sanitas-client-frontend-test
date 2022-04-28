@@ -4,6 +4,8 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { LoginRoutingModule } from './login-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginBoxComponent } from './components/login-box/login-box.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -15,7 +17,9 @@ import { LoginBoxComponent } from './components/login-box/login-box.component';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    LoginRoutingModule
+    LoginRoutingModule,
+    FontAwesomeModule,
+    SharedModule
   ]
 })
 export class LoginModule { }
