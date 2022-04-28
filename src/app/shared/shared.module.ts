@@ -7,6 +7,7 @@ import { ToogleSwitchComponent } from './components/toogle-switch/toogle-switch.
   declarations: [ToogleSwitchComponent],
   imports: [
     CommonModule
-  ]
+  ],
+  exports: [ToogleSwitchComponent]
 })
 export class SharedModule { }

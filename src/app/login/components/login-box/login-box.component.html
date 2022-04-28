@@ -1,1 +1,118 @@
-<p>login-box works!</p>
+<div class="login-box d-flex flex-column justify-content-center p-3">
+  <div class="row justify-content-center">
+    <img class="" src="../../../../assets/logo.jpg" />
+  </div>
+  <div class="row justify-content-center mt-3">
+    <span class="fw-bold text-center h6">Prueba técnica</span>
+  </div>
+  <form
+    [formGroup]="form"
+    class="d-flex flex-column justify-content-center mt-2"
+    (ngSubmit)="onSubmit()"
+  >
+    <div class="row justify-content-center">
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon p-2">
+            <fa-icon [icon]="faEnvelope"></fa-icon>
+          </div>
+          <input
+            class="form-control"
+            [ngClass]="
+              form.controls['email'].errors && isFormSubmitted
+                ? 'is-invalid'
+                : ''
+            "
+            id="email"
+            name="email"
+            type="text"
+            placeholder="Email"
+            formControlName="email"
+          />
+          <div
+            [ngClass]="
+              form.controls['email'].hasError('required') && isFormSubmitted
+                ? 'd-block invalid-feedback'
+                : 'd-none'
+            "
+          >
+            Por favor, rellene este campo
+          </div>
+          <div
+            [ngClass]="
+              form.controls['email'].hasError('email') && isFormSubmitted
+                ? 'd-block invalid-feedback'
+                : 'd-none'
+            "
+          >
+            Por favor, rellene un mail
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center mt-3">
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon p-2">
+            <fa-icon [icon]="faLock"></fa-icon>
+          </div>
+          <input
+            class="form-control"
+            [ngClass]="
+              form.controls['password'].errors && isFormSubmitted
+                ? 'is-invalid'
+                : ''
+            "
+            id="password"
+            name="password"
+            type="password"
+            placeholder="Password"
+            formControlName="password"
+          />
+          <div
+            [ngClass]="
+              form.controls['password'].hasError('required') && isFormSubmitted
+                ? 'd-block invalid-feedback'
+                : 'd-none'
+            "
+          >
+            Por favor, rellene este campo
+          </div>
+          <div
+            [ngClass]="
+              form.controls['password'].hasError('minlength') && isFormSubmitted
+                ? 'd-block invalid-feedback'
+                : 'd-none'
+            "
+          >
+            Por favor, inserte password mayor que 5 caracteres
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center mt-4">
+      <div class="form-group">
+        <div class="row">
+          <div class="col-6 d-flex justify-content-start">
+            <span>Recordar</span>
+          </div>
+          <div class="col-6 d-flex justify-content-end">
+            <app-toogle-switch
+              id="remember"
+              (changeToogle)="onChangeToogle($event)"
+            ></app-toogle-switch>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center mt-3">
+      <button
+        id="validate-button"
+        type="submit"
+        class="btn btn-primary mt-2 w-50 fs"
+      >
+        Validar
+      </button>
+    </div>
+  </form>
+</div>
