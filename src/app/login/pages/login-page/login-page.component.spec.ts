@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SharedModule } from 'src/app/common/shared.module';
+import { SharedModule } from 'src/app/shared/shared.module';
 import { LoginBoxComponent } from '../../components/login-box/login-box.component';
 import { LoginTestModule } from '../../login.module.spec';
 

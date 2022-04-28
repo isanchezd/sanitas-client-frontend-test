@@ -32,7 +32,7 @@ describe('LoginBoxComponent', () => {
     validateButton.click();
 
     expect(component.form.invalid).toBeTruthy();
-    expect(component.form.controls.email.hasError('required')).toBeTruthy();
+    expect(component.form.controls['email'].hasError('required')).toBeTruthy();
   });
 
   it('If the email is incorrect format  the form should be invalid and the email formControl should be has error email', () => {
@@ -46,7 +46,7 @@ describe('LoginBoxComponent', () => {
     validateButton.click();
 
     expect(component.form.invalid).toBeTruthy();
-    expect(component.form.controls.email.hasError('email')).toBeTruthy();
+    expect(component.form.controls['email'].hasError('email')).toBeTruthy();
   });
 
   it('If the password is empty the form should show an error and the password formControl should be has error required', () => {
@@ -60,7 +60,7 @@ describe('LoginBoxComponent', () => {
     fixture.detectChanges();
 
     expect(component.form.invalid).toBeTruthy();
-    expect(component.form.controls.password.hasError('required')).toBeTruthy();
+    expect(component.form.controls['password'].hasError('required')).toBeTruthy();
   });
 
   it('If the password is min length than 5 the form should show an error and the password formcontrol shoud be has error minlength', () => {
@@ -74,7 +74,7 @@ describe('LoginBoxComponent', () => {
     fixture.detectChanges();
 
     expect(component.form.invalid).toBeTruthy();
-    expect(component.form.controls.password.hasError('minlength')).toBeTruthy();
+    expect(component.form.controls['password'].hasError('minlength')).toBeTruthy();
   });
 
   it('When the form have valid data should be valid', () => {
@@ -102,7 +102,7 @@ describe('LoginBoxComponent', () => {
     fixture.detectChanges();
     validateButton.click();
 
-    expect(component.form.controls.remember.value).toBeTruthy();
+    expect(component.form.controls['remember'].value).toBeTruthy();
   });
 
 });
