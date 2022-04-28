@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ToogleSwitchComponent } from './toogle-switch.component';
 
@@ -22,4 +22,18 @@ describe('ToogleSwitchComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('when the toogle change the state should be change and emit an event', waitForAsync(() => {
+    const element = fixture.nativeElement;
+    const spanElement = element.querySelector('span');
+
+    component.changeToogle.subscribe(value => {
+      expect(value).toBeTruthy();
+    })
+
+    spanElement.click();
+    fixture.detectChanges();
+
+  }));
+
 });
